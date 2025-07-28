@@ -1,5 +1,4 @@
-
-import React from 'react';
+import React, { useState } from 'react';
 import '../styles/homepage.css';
 import { Link } from 'react-router-dom';
 import ProjectShowcase from '../components/ProjectShowcase';
@@ -9,13 +8,17 @@ import ExperienceTimeline from '../components/ExperienceTimeline';
 import ResumeDownload from '../components/ResumeDownload';
 import DarkModeToggle from '../components/DarkModeToggle';
 import Testimonials from '../components/Testimonials';
+import avatarImg from '../assets/avatar.jpg';
 
 const techList = ['React', 'Node.js', 'Vite', 'Tailwind CSS', 'JavaScript'];
 
 
 const Home = () => {
+  const [showAvatarModal, setShowAvatarModal] = useState(false);
+
   return (
     <div className="homepage-bg">
+      {/* Cover image removed */}
       <nav className="homepage-nav">
         <div className="nav-brand">Ar'Jae.dev</div>
         <ul className="nav-links">
@@ -28,9 +31,9 @@ const Home = () => {
       <section className="homepage-hero">
         <div className="homepage-gradient-bg" />
         <div className="hero-content">
-          <div className="hero-avatar">
+          <div className="hero-avatar" onClick={() => setShowAvatarModal(true)} style={{ cursor: 'pointer' }}>
             <img
-              src="/assets/avatar.png"
+              src={avatarImg}
               alt="Ar'Jae avatar"
               className="avatar-img"
             />
@@ -54,6 +57,14 @@ const Home = () => {
             <a href="#" aria-label="Email">✉️</a>
           </div>
         </div>
+        {showAvatarModal && (
+          <div className="avatar-modal-bg" onClick={() => setShowAvatarModal(false)}>
+            <div className="avatar-modal" onClick={e => e.stopPropagation()}>
+              <img src={avatarImg} alt="Ar'Jae avatar full" className="avatar-modal-img" />
+              <button className="avatar-modal-close" onClick={() => setShowAvatarModal(false)}>&times;</button>
+            </div>
+          </div>
+        )}
       </section>
     </div>
   );
