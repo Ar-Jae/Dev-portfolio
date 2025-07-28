@@ -1,12 +1,22 @@
+
 import React from 'react';
-import { useLocation } from 'react-router-dom';
+import { motion } from 'framer-motion';
+import Navbar from '../components/Navbar';
 import ProjectShowcase from '../components/ProjectShowcase';
 
+
+
+
 const Projects = ({ projects }) => (
-  <main className="homepage-bg projects-page">
-    <h1 className="projects-title">Projects</h1>
-    <ProjectShowcase projects={projects} />
-  </main>
+  <>
+    <Navbar />
+    <motion.section className="homepage-bg" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5 }}>
+      <div className="projects-card">
+        <h2 className="projects-title">Projects</h2>
+        <ProjectShowcase projects={projects} />
+      </div>
+    </motion.section>
+  </>
 );
 
 export default Projects;

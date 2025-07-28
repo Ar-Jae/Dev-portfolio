@@ -2,6 +2,7 @@
 
 A modern, responsive, and interactive developer portfolio built with **React** and **Tailwind CSS**. This site highlights a chronological journey of your projects, showcases current work, and includes interactive previews, tech filters, testimonials, and a resume placeholder.
 
+
 ## ✨ Features
 
 - Chronologically ordered project showcase
@@ -11,26 +12,33 @@ A modern, responsive, and interactive developer portfolio built with **React** a
 - Current work highlight at the top
 - Experience timeline showing tech progression
 - Download Resume (placeholder)
+- Reusable Navbar component mounted on all pages
+- About and Experience pages for personal and professional info
+- Full-screen card layout for all main sections
 
 # Developer Portfolio
 
 Modern, modular React developer portfolio built with Vite, framer-motion, and custom CSS. Features:
 
+
 - ⚡ Modern React + Vite setup
 - 🎨 Custom CSS for theme and layout
 - 🖼️ Dynamic project showcase with full-screen card layout
-- �️ Admin dashboard for adding projects via GitHub URL
+- 🛠️ Admin dashboard for adding projects via GitHub URL
 - 🌙 Dark mode support
 - 📱 Mobile responsive
 - 📝 Automated change logging
 - 🖼️ Cover image fallback: `/assets/cover.jpg` is used as the main image for all projects, with per-project image as backup
+- 🧭 Reusable Navbar for consistent navigation
+- 👤 About and Experience pages
+
 
 ## Folder Structure
 
 ```
 src/
-  components/  # Reusable components
-  pages/       # Page components
+  components/  # Reusable components (Navbar, ProjectShowcase, etc.)
+  pages/       # Page components (Home, About, Experience, Projects, Contact, AdminDashboard)
   assets/      # Images, icons, etc.
   data/        # Static data (e.g., project info)
   styles/      # Custom styles (if any)

@@ -1,13 +1,10 @@
 import React, { useState } from 'react';
 import '../styles/homepage.css';
 import { Link } from 'react-router-dom';
+import Navbar from '../components/Navbar';
 import ProjectShowcase from '../components/ProjectShowcase';
 import TechFilter from '../components/TechFilter';
-import CurrentWork from '../components/CurrentWork';
-import ExperienceTimeline from '../components/ExperienceTimeline';
 import ResumeDownload from '../components/ResumeDownload';
-import DarkModeToggle from '../components/DarkModeToggle';
-import Testimonials from '../components/Testimonials';
 import avatarImg from '../assets/avatar.jpg';
 
 const techList = ['React', 'Node.js', 'Vite', 'Tailwind CSS', 'JavaScript'];
@@ -18,18 +15,7 @@ const Home = () => {
 
   return (
     <div className="homepage-bg">
-      {/* Cover image removed */}
-      <nav className="homepage-nav">
-        <div className="nav-brand">Ar'Jae.dev</div>
-        <ul className="nav-links">
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="/about">About</Link></li>
-          <li><Link to="/experience">Experience</Link></li>
-          <li><Link to="/projects">Projects</Link></li>
-          <li><Link to="/contact">Contact</Link></li>
-        </ul>
-        <div className="nav-darkmode"><DarkModeToggle /></div>
-      </nav>
+      <Navbar />
       <section className="homepage-hero">
         <div className="homepage-gradient-bg" />
         <div className="hero-content">
