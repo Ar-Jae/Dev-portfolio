@@ -1,4 +1,6 @@
 import React from 'react';
+import coverImg from '../assets/cover.jpg';
+
 import { motion } from 'framer-motion';
 const ProjectShowcase = ({ projects }) => {
   return (
@@ -9,7 +11,7 @@ const ProjectShowcase = ({ projects }) => {
           {projects.map((project, idx) => (
             <div key={idx} className="rounded-2xl shadow-xl p-6 bg-white/10 dark:bg-gray-900/60 backdrop-blur-lg border border-gray-800 hover:scale-[1.03] hover:shadow-2xl transition-transform duration-300">
               <img 
-                src={'/assets/cover.jpg'} 
+                src={coverImg} 
                 alt={project.title + ' screenshot'} 
                 className="mb-4 rounded-xl shadow" 
                 onError={e => { if (project.image) e.target.src = project.image; }}
