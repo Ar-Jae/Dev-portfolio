@@ -6,23 +6,50 @@ import Navbar from '../components/Navbar';
 
 const Contact = () => {
   const [form, setForm] = useState({ name: '', email: '', message: '' });
-  const [submitted, setSubmitted] = useState(false);
-  const [error, setError] = useState('');
+  const [status, setStatus] = useState({
+    submitting: false,
+    submitted: false,
+    error: ''
+  });
 
   const handleChange = e => {
     setForm({ ...form, [e.target.name]: e.target.value });
-    setError('');
+    if (status.error) {
+      setStatus({ ...status, error: '' });
+    }
   };
 
-  const handleSubmit = e => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (!form.name || !form.email || !form.message) {
-      setError('Please fill out all fields.');
+      setStatus({ ...status, error: 'Please fill out all fields.' });
       return;
     }
-    setSubmitted(true);
-    setTimeout(() => setSubmitted(false), 4000);
-    // You can add email service integration here
+
+    // Basic email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(form.email)) {
+      setStatus({ ...status, error: 'Please enter a valid email address.' });
+      return;
+    }
+
+    setStatus({ submitting: true, submitted: false, error: '' });
+    try {
+      // Mock API call - replace with a real one (e.g., EmailJS, Formspree)
+      await new Promise(resolve => setTimeout(resolve, 1500));
+
+      // On success
+      setStatus({ submitting: false, submitted: true, error: '' });
+      setForm({ name: '', email: '', message: '' });
+      setTimeout(() => setStatus(prev => ({ ...prev, submitted: false })), 4000);
+    } catch (err) {
+      // On error
+      setStatus({
+        submitting: false,
+        submitted: false,
+        error: 'Failed to send message. Please try again.'
+      });
+    }
   };
 
   return (
@@ -44,39 +71,47 @@ const Contact = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', width: '100%' }}
         >
           <input
             type="text"
             name="name"
             placeholder="Your Name"
+            aria-label="Your Name"
             value={form.name}
             onChange={handleChange}
             required
-            style={{ margin: '0.5rem auto', width: '100%', maxWidth: '400px', display: 'block' }}
+            className="contact-input"
           />
           <input
             type="email"
             name="email"
             placeholder="Your Email"
+            aria-label="Your Email"
             value={form.email}
             onChange={handleChange}
             required
-            style={{ margin: '0.5rem auto', width: '100%', maxWidth: '400px', display: 'block' }}
+            className="contact-input"
           />
           <textarea
             name="message"
             placeholder="Your Message"
+            aria-label="Your Message"
             value={form.message}
             onChange={handleChange}
             required
-            style={{ margin: '0.5rem auto', width: '100%', maxWidth: '400px', display: 'block' }}
+            className="contact-input min-h-[120px]"
           />
-          <motion.button type="submit" className="contact-btn" whileTap={{ scale: 0.97 }} whileHover={{ scale: 1.03 }} style={{ margin: '1rem auto', width: '100%', maxWidth: '400px', display: 'block' }}>
-            Send Message
+          <motion.button
+            type="submit"
+            className="contact-btn"
+            whileTap={{ scale: 0.97 }}
+            whileHover={{ scale: 1.03 }}
+            disabled={status.submitting}
+          >
+            {status.submitting ? 'Sending...' : 'Send Message'}
           </motion.button>
-          {error && <motion.div className="contact-success" initial={{ opacity: 0 }} animate={{ opacity: 1 }} style={{ color: '#f87171', margin: '0.5rem auto', maxWidth: '400px', textAlign: 'center' }}>{error}</motion.div>}
-          {submitted && <motion.div className="contact-success" initial={{ opacity: 0 }} animate={{ opacity: 1 }} style={{ margin: '0.5rem auto', maxWidth: '400px', textAlign: 'center' }}>Thank you! I'll get back to you soon.</motion.div>}
+          {status.error && <motion.div className="contact-error" initial={{ opacity: 0 }} animate={{ opacity: 1 }}>{status.error}</motion.div>}
+          {status.submitted && <motion.div className="contact-success" initial={{ opacity: 0 }} animate={{ opacity: 1 }}>Thank you! I'll get back to you soon.</motion.div>}
         </motion.form>
         <motion.div
           className="contact-socials"
@@ -84,9 +119,9 @@ const Contact = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.3 }}
         >
-          <motion.a href="mailto:rhojon.se@gmail.com" className="contact-link" aria-label="Email" whileHover={{ scale: 1.08 }} whileTap={{ scale: 0.97 }}><span>✉️</span> Email</motion.a>
-          <motion.a href="https://github.com/ArJae" className="contact-link" aria-label="GitHub" whileHover={{ scale: 1.08 }} whileTap={{ scale: 0.97 }}><span>🐙</span> GitHub</motion.a>
-          <motion.a href="https://www.linkedin.com/in/ar-jae-wiz/" className="contact-link" aria-label="LinkedIn" whileHover={{ scale: 1.08 }} whileTap={{ scale: 0.97 }}><span>💼</span> LinkedIn</motion.a>
+          <motion.a href="mailto:rhojon.se@gmail.com" className="contact-link" aria-label="Email" whileHover={{ scale: 1.08 }} whileTap={{ scale: 0.97 }}><span aria-hidden="true">✉️</span> Email</motion.a>
+          <motion.a href="https://github.com/ArJae" className="contact-link" aria-label="GitHub" whileHover={{ scale: 1.08 }} whileTap={{ scale: 0.97 }}><span aria-hidden="true">🐙</span> GitHub</motion.a>
+          <motion.a href="https://www.linkedin.com/in/ar-jae-wiz/" className="contact-link" aria-label="LinkedIn" whileHover={{ scale: 1.08 }} whileTap={{ scale: 0.97 }}><span aria-hidden="true">💼</span> LinkedIn</motion.a>
         </motion.div>
       </motion.main>
     </>

@@ -43,9 +43,8 @@ const Projects = ({ projects }) => (
                 alt={project.title + ' screenshot'} 
                 className="project-img"
                 onError={e => { e.target.src = '/src/assets/cover.jpg'; e.target.onerror = null; }}
-                style={{ transition: 'box-shadow 0.2s' }}
               />
-              <h3 className="project-title" style={{ marginBottom: '0.5rem' }}>{project.title}</h3>
+              <h3 className="project-title mb-2">{project.title}</h3>
               <p className="project-desc">{project.description}</p>
               <nav className="project-links-navbar">
                 {project.live && <a href={project.live} className="project-link" target="_blank" rel="noopener noreferrer">Live Preview</a>}

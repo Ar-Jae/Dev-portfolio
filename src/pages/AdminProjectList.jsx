@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { motion } from 'framer-motion';
 
 const AdminProjectList = ({
@@ -17,12 +17,14 @@ const AdminProjectList = ({
   setDeleteIdx,
   setShowDeleteModal
 }) => {
-  let filtered = projects.filter(p =>
-    (!filterText || p.title.toLowerCase().includes(filterText.toLowerCase())) &&
-    (!filterTech || (p.description && p.description.toLowerCase().includes(filterTech.toLowerCase())))
-  );
-  if (sortBy === 'stars') filtered = [...filtered].sort((a, b) => (b.stars || 0) - (a.stars || 0));
-  else filtered = [...filtered].sort((a, b) => new Date(b.updated) - new Date(a.updated));
+  const filteredProjects = useMemo(() => {
+    let filtered = projects.filter(p =>
+      (!filterText || p.title.toLowerCase().includes(filterText.toLowerCase())) &&
+      (!filterTech || (p.description && p.description.toLowerCase().includes(filterTech.toLowerCase())))
+    );
+    if (sortBy === 'stars') return [...filtered].sort((a, b) => (b.stars || 0) - (a.stars || 0));
+    return [...filtered].sort((a, b) => new Date(b.updated) - new Date(a.updated));
+  }, [projects, filterText, filterTech, sortBy]);
 
   return (
     <div className="w-full max-w-2xl mx-auto">
@@ -62,11 +64,11 @@ const AdminProjectList = ({
           <option value="stars">Sort by Stars</option>
         </select>
       </div>
-      {filtered.length === 0 ? (
+      {filteredProjects.length === 0 ? (
         <div className="text-gray-400">No projects found.</div>
       ) : (
         <ul className="space-y-4">
-          {filtered.map((project, idx) => (
+          {filteredProjects.map((project, idx) => (
             <motion.li
               key={project.github || idx}
               initial={{ opacity: 0, y: 20 }}
