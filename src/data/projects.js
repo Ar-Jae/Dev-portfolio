@@ -16,6 +16,13 @@ const projects = [
     github: 'https://github.com/ArJae/weather-app',
     live: 'https://weather.arjae.dev',
   },
+    {
+    title: 'E-commerce Store',
+    description: 'An e-commerce platform with product listings, cart functionality, and user authentication.',
+    image: '/assets/project3.png',
+    github: 'https://github.com/ArJae/E-commerce-Store',
+    live: 'https://arjae.dev', 
+    }
   // Add more projects below
 ];
 

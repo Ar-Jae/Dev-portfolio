@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import '../styles/homepage.css';
 import { Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
-import ProjectShowcase from '../components/ProjectShowcase';
 import TechFilter from '../components/TechFilter';
 import ResumeDownload from '../components/ResumeDownload';
 import avatarImg from '../assets/avatar.jpg';
