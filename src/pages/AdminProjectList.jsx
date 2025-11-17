@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react';
-import { LazyMotion, domAnimation, m as motion } from 'framer-motion';
+
 
 const AdminProjectList = ({
   projects,
