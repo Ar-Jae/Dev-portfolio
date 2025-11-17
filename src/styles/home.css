@@ -1,0 +1,83 @@
+/* Home page styles - imports base stylesheet to keep behavior identical for now */
+@import './base.css';
+
+/* Home page specific styles */
+.homepage-bg {
+	min-height: 100svh;
+	min-height: 100vh;
+	width: 100%;
+	background: #111;
+	color: #fff;
+	position: relative;
+	overflow-x: hidden;
+	overflow-y: auto;
+	display: flex;
+	flex-direction: column;
+	z-index: 0;
+}
+
+.homepage-cover {
+	width: 100vw;
+	max-width: 100vw;
+	height: 320px;
+	position: relative;
+	overflow: hidden;
+	z-index: 1;
+}
+.cover-img {
+	width: 100vw;
+	height: 100%;
+	object-fit: cover;
+	display: block;
+	filter: brightness(0.85) saturate(1.1);
+}
+@media (max-width: 768px) {
+	.homepage-cover { height: 180px; }
+}
+
+.homepage-hero {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	min-height: 100svh;
+	min-height: 100vh;
+	width: 100vw;
+	position: relative;
+	padding: 2rem 1rem;
+	box-sizing: border-box;
+}
+
+.homepage-gradient-bg { position: absolute; inset: 0; z-index: 0; pointer-events: none; background: radial-gradient(ellipse 60% 60% at 60% 60%, rgba(139,92,246,0.4), rgba(0,0,0,0.9)); }
+.hero-content { position: relative; z-index: 10; display: flex; flex-direction: column; align-items: center; }
+.hero-avatar { width: 130px; height: 130px; border-radius: 50%; background: linear-gradient(135deg, #a78bfa, #6366f1); margin-bottom: 1.5rem; box-shadow: 0 4px 24px rgba(139,92,246,0.2); display: flex; align-items: center; justify-content: center; overflow: hidden; }
+.avatar-img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; border: 4px solid #a78bfa; box-shadow: 0 2px 12px rgba(139,92,246,0.2); }
+.hero-title { font-size: 3rem; font-weight: 800; text-align: center; margin-bottom: 1rem; background: linear-gradient(90deg, #a78bfa, #6366f1, #3b82f6); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: transparent; word-break: break-word; }
+.hero-name { font-weight: bold; }
+.hero-role { font-weight: 400; display: block; }
+.hero-desc { font-size: 1.2rem; text-align: center; max-width: 600px; margin-bottom: 2rem; color: #e5e7eb; }
+.hero-keyword { font-weight: 600; color: #a78bfa; }
+.hero-actions { display: flex; gap: 1.5rem; margin-bottom: 2rem; }
+.hero-btn { padding: 0.75rem 2rem; border-radius: 1rem; font-size: 1.1rem; font-weight: 500; border: 1px solid #312e81; background: rgba(31, 41, 55, 0.8); color: #fff; box-shadow: 0 2px 8px rgba(0,0,0,0.12); text-decoration: none; display: flex; align-items: center; gap: 0.5rem; transition: background 0.2s, color 0.2s; }
+.hero-socials { display: flex; gap: 2rem; font-size: 2rem; margin-top: 0.5rem; }
+.hero-socials a { color: #fff; transition: color 0.2s; text-decoration: none; }
+.hero-socials a:hover { color: #a78bfa; }
+
+/* Avatar Modal */
+.avatar-modal-bg { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0,0,0,0.7); display: flex; align-items: center; justify-content: center; z-index: 1000; animation: fadeInBg 0.3s; }
+.avatar-modal { position: relative; background: #222; border-radius: 1.5rem; box-shadow: 0 8px 32px rgba(139,92,246,0.3); padding: 2rem; display: flex; flex-direction: column; align-items: center; animation: popInModal 0.3s; }
+.avatar-modal-img { max-width: 80vw; max-height: 70vh; border-radius: 1.2rem; box-shadow: 0 4px 24px rgba(139,92,246,0.3); }
+.avatar-modal-close { position: absolute; top: 1rem; right: 1rem; background: #a78bfa; color: #fff; border: none; border-radius: 50%; width: 2.2rem; height: 2.2rem; font-size: 1.5rem; cursor: pointer; box-shadow: 0 2px 8px rgba(139,92,246,0.2); transition: background 0.2s; }
+.avatar-modal-close:hover { background: #6366f1; }
+@keyframes fadeInBg { from { opacity: 0; } to { opacity: 1; } }
+@keyframes popInModal { from { transform: scale(0.8); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+
+@media (max-width: 768px) {
+	.homepage-hero { min-height: 100svh; min-height: 100vh; padding: 1.2rem 0.5rem; }
+	.hero-title { font-size: 2rem; margin-bottom: 0.7rem; }
+	.hero-avatar { width: 90px; height: 90px; margin-bottom: 1rem; }
+	.hero-desc { font-size: 1rem; max-width: 90vw; margin-bottom: 1.2rem; }
+	.hero-actions { gap: 0.7rem; margin-bottom: 1.2rem; }
+	.hero-btn { padding: 0.5rem 1.2rem; font-size: 1rem; border-radius: 0.7rem; }
+	.hero-socials { gap: 1rem; font-size: 1.3rem; }
+}

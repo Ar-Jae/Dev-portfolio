@@ -1,0 +1,9 @@
+/* Projects page styles - imports base stylesheet */
+
+@import './base.css';
+
+/* Projects page specific rules */
+.projects-page { display: flex; flex-direction: column; align-items: center; }
+.projects-card { width: 100vw; min-height: 100vh; padding: 3rem 2rem; display: flex; flex-direction: column; align-items: center; }
+.projects-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2rem; width: 100%; }
+.project-card { padding: 2rem 1.2rem; }

@@ -1,0 +1,9 @@
+/* Experience page styles - imports base stylesheet */
+
+@import './base.css';
+
+/* Experience page specific overrides */
+.experience-page { min-height: 100vh; width: 100vw; display: flex; align-items: center; justify-content: center; }
+.experience-timeline { padding-left: 2rem; margin: 0 auto; max-width: 700px; }
+.timeline-card { padding: 2rem 1.5rem; }
+.timeline-title { font-size: 1.3rem; font-weight: 800; margin-bottom: 0.7rem; }

@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { LazyMotion, domAnimation, m as motion } from 'framer-motion';
 import Navbar from '../components/Navbar';
 
 const experiences = [
@@ -23,7 +23,8 @@ const experiences = [
 
 
 const Experience = () => (
-  <>
+  <LazyMotion features={domAnimation}>
+    <>
     <Navbar />
     <motion.section
       className="homepage-bg"
@@ -68,7 +69,8 @@ const Experience = () => (
         </motion.ul>
       </div>
     </motion.section>
-  </>
+    </>
+  </LazyMotion>
 );
 
 export default Experience;

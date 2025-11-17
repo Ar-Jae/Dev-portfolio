@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
+import { LazyMotion, domAnimation, m as motion } from 'framer-motion';
 import Navbar from '../components/Navbar';
 
 
@@ -53,7 +53,8 @@ const Contact = () => {
   };
 
   return (
-    <>
+    <LazyMotion features={domAnimation}>
+      <>
       <Navbar />
       <motion.main
         className="homepage-bg contact-page"
@@ -124,7 +125,8 @@ const Contact = () => {
           <motion.a href="https://www.linkedin.com/in/ar-jae-wiz/" className="contact-link" aria-label="LinkedIn" whileHover={{ scale: 1.08 }} whileTap={{ scale: 0.97 }}><span aria-hidden="true">💼</span> LinkedIn</motion.a>
         </motion.div>
       </motion.main>
-    </>
+      </>
+    </LazyMotion>
   );
 };
 
