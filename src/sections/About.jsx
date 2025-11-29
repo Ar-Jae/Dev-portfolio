@@ -35,19 +35,19 @@ const About = () => {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div className="flex items-center gap-3 text-slate-300">
-                <MapPin className="text-primary" size={20} />
+                <MapPin className="text-indigo-400" size={20} />
                 <span>New York City, NY</span>
               </div>
               <div className="flex items-center gap-3 text-slate-300">
-                <Briefcase className="text-primary" size={20} />
+                <Briefcase className="text-indigo-400" size={20} />
                 <span>Software Engineer</span>
               </div>
               <div className="flex items-center gap-3 text-slate-300">
-                <Calendar className="text-primary" size={20} />
+                <Calendar className="text-indigo-400" size={20} />
                 <span>1 Years Experience</span>
               </div>
               <div className="flex items-center gap-3 text-slate-300">
-                <Code className="text-primary" size={20} />
+                <Code className="text-indigo-400" size={20} />
                 <span>Full-Stack Focus</span>
               </div>
             </div>

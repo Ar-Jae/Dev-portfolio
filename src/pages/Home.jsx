@@ -21,7 +21,7 @@ const Home = () => {
       </main>
       
       <footer className="bg-slate-950 py-8 border-t border-slate-800">
-        <div className="max-w-6xl mx-auto px-6 text-center text-slate-500 text-sm">
+        <div className="max-w-6xl mx-auto px-6 text-center text-slate-400 text-sm">
           <p>&copy; {new Date().getFullYear()} Ar'Jae. All rights reserved.</p>
         </div>
       </footer>

@@ -18,7 +18,7 @@ const Experience = () => {
       >
         <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-4 gap-2">
           <h3 className="text-lg font-bold text-white">{item.title || item.degree}</h3>
-          <span className="text-sm font-medium text-primary bg-indigo-900/30 px-3 py-1 rounded-full w-fit">
+          <span className="text-sm font-medium text-indigo-300 bg-indigo-900/30 px-3 py-1 rounded-full w-fit">
             {item.period}
           </span>
         </div>

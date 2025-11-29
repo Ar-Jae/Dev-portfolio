@@ -24,7 +24,7 @@ const Hero = () => {
           Available for work
         </span>
         <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 tracking-tight">
-          Hi, I'm <span className="text-primary">Ar'Jae</span>
+          Hi, I'm <span className="text-indigo-400">Ar'Jae</span>
         </h1>
         <p className="text-xl md:text-2xl text-slate-200 mb-8 font-light">
           Software Engineer | Full-Stack Developer
