@@ -1,5 +1,7 @@
 import React from 'react';
 import { MapPin, Calendar, Briefcase, Code } from 'lucide-react';
+import meVideo from '../assets/me.MP4';
+
 
 const About = () => {
   return (
@@ -10,7 +12,14 @@ const About = () => {
           <div className="relative group">
             <div className="absolute -inset-4 bg-indigo-100 rounded-2xl transform -rotate-2 group-hover:rotate-0 transition-transform duration-300"></div>
             <div className="relative bg-slate-200 rounded-xl overflow-hidden aspect-square flex items-center justify-center text-slate-400">
-              <span className="text-lg">Profile Image Placeholder</span>
+              <video 
+                src={meVideo} 
+                autoPlay 
+                loop 
+                muted 
+                playsInline 
+                className="w-full h-full object-cover"
+              />
             </div>
           </div>
 
@@ -29,7 +38,7 @@ const About = () => {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div className="flex items-center gap-3 text-slate-700">
                 <MapPin className="text-primary" size={20} />
-                <span>San Francisco, CA</span>
+                <span>New York City, NY</span>
               </div>
               <div className="flex items-center gap-3 text-slate-700">
                 <Briefcase className="text-primary" size={20} />
@@ -37,7 +46,7 @@ const About = () => {
               </div>
               <div className="flex items-center gap-3 text-slate-700">
                 <Calendar className="text-primary" size={20} />
-                <span>3+ Years Experience</span>
+                <span>1 Years Experience</span>
               </div>
               <div className="flex items-center gap-3 text-slate-700">
                 <Code className="text-primary" size={20} />

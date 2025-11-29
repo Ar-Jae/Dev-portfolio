@@ -1,19 +1,19 @@
 export const skillCategories = [
   {
-    title: "Languages",
-    skills: ["JavaScript (ES6+)", "HTML5", "CSS3", "SQL"]
+    title: "Languages & Core",
+    skills: ["JavaScript", "Asynchronous Javascript", "HTML", "CSS", "Data Structures"]
   },
   {
     title: "Frontend",
-    skills: ["React", "Next.js", "Tailwind CSS", "Redux", "Framer Motion"]
+    skills: ["React", "React Hooks", "React Libraries", "Leaflet.js", "Responsive Design", "Front-end Web Development"]
   },
   {
     title: "Backend",
-    skills: ["Node.js", "Express", "PostgreSQL", "MongoDB", "REST APIs"]
+    skills: ["Node.js", "Express", "MongoDB", "Mongoose ODM", "Passport.js", "Authentication"]
   },
   {
-    title: "Tools & DevOps",
-    skills: ["Git", "Docker", "CI/CD"]
+    title: "Tools & Methodologies",
+    skills: ["Git", "GitHub", "Agile", "Project Management"]
   }
 ];
 
@@ -99,7 +99,8 @@ export const education = [
 ];
 
 export const socialLinks = {
-  email: "hello@example.com",
-  github: "github.com/yourusername",
-  linkedin: "linkedin.com/in/yourusername"
+  email: "rhojon.se@gmail.com",
+  github: "https://github.com/arjaedev",
+  linkedin: "https://www.linkedin.com/in/ar-jae-wiz/",
+  credly: "https://www.credly.com/users/rhojon-wizzard/skills"
 };
