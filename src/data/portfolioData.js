@@ -21,9 +21,16 @@ export const projects = [
   {
     title: "Local Event Bulletin Board Frontend",
     description: "The Friendly Fence Bulletin Board is a community-focused web application designed to connect neighbors by sharing local news, events, and updates. It serves as a digital town square where users can easily browse upcoming activities, post their own events, and RSVP to gatherings without needing to create an account",
-    stack: ["JavaScript"],
+    stack: ["JavaScript ", "React", "CSS", "Vite"],
     github: "https://github.com/Ar-Jae/Local-Event-Bulletin-Board-Frontend",
-    demo: "https://local-event-bulletin-board-frontend.vercel.app"
+    demo: "https://ar-jae.github.io/Local-Event-Bulletin-Board-Frontend/"
+  },
+  {
+    title: "Jeopardy Part I",
+    description: "Jeopardy Game - A browser-based interactive quiz game inspired by the classic TV show. Features include a fully functional two-player mode with automatic score tracking, turn management, two rounds of questions with increasing difficulty, and a Final Jeopardy wagering round. Built with vanilla JavaScript, HTML, and CSS, and deployed using Vite.",
+    stack: ["JavaScript", "HTML", "CSS", "Vite"],
+    github: "https://github.com/arjaedev/Jeopardy-Part-I",
+    demo: "https://arjaedev.github.io/Jeopardy-Part-I/"
   },
 ];
 
