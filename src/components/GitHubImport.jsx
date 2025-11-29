@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { LazyMotion, domAnimation, m} from 'framer-motion';
+import { LazyMotion, domAnimation } from 'framer-motion';
 
 const GitHubImport = ({ onProjectImported }) => {
   const [repoUrl, setRepoUrl] = useState('');

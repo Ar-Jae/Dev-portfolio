@@ -17,6 +17,7 @@ A modern, modular, and fully responsive developer portfolio built with **React**
 - Dynamic project management via Admin Dashboard (add projects by GitHub URL)
 - Cover image fallback: `/assets/cover.jpg` used for all projects
 - Mobile-optimized and responsive design
+- Mobile-optimized and responsive design (collapsible Navbar, improved scrolling)
 - framer-motion for smooth animations
 - Tailwind CSS for theme and layout
 - Dark mode support
@@ -71,6 +72,13 @@ This project uses Vite for fast builds and Tailwind CSS for styling. To deploy:
 - Set publish directory: `dist`
 
 For more details, see the Vite and Tailwind CSS documentation.
+
+## 📱 Mobile Responsiveness
+
+- Navbar collapses into a hamburger menu on small screens.
+- Removed rigid 100vh containers to avoid iOS Safari viewport issues.
+- Project grid adapts from 3 → 2 → 1 columns across breakpoints.
+- Buttons, typography, and spacing scale for readability on phones.
 
 ## 🛠️ Project Management
 

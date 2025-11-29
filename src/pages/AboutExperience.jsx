@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+// Removed unused motion import
 
 const aboutData = {
   name: 'Ar’Jae',

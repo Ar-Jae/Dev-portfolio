@@ -1,5 +1,5 @@
 import React from "react";
-import { LazyMotion, domAnimation, m as motion } from "framer-motion";
+import { LazyMotion, domAnimation, m as M } from 'framer-motion';
 import GitHubImport from "../components/GitHubImport";
 
 const dashboardVariants = {
@@ -20,7 +20,7 @@ const AdminDashboard = ({ projects, setProjects }) => {
 
     return (
         <LazyMotion features={domAnimation}>
-            <motion.div
+            <M.div
                 className="homepage-bg admin-card"
                 initial="hidden"
                 animate="visible"
@@ -40,7 +40,7 @@ const AdminDashboard = ({ projects, setProjects }) => {
                         ℹ️ Imported projects will appear on the <a href="/projects" className="text-indigo-400 hover:underline font-semibold">Projects page</a>.
                     </p>
                 </div>
-            </motion.div>
+            </M.div>
         </LazyMotion>
     );
 };

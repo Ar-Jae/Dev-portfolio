@@ -1,5 +1,5 @@
 import React from 'react';
-import { LazyMotion, domAnimation, m as motion } from 'framer-motion';
+import { LazyMotion, domAnimation, m as M } from 'framer-motion';
 import Navbar from '../components/Navbar';
 
 
@@ -7,22 +7,22 @@ const Projects = ({ projects }) => (
   <LazyMotion features={domAnimation}>
     <>
       <Navbar />
-      <motion.section
+        <M.section
         className="projects-page"
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
       >
         <div className="projects-card">
-          <motion.h2
+            <M.h2
             className="projects-title"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            Projects
-          </motion.h2>
-          <motion.div
+              Projects
+            </M.h2>
+          <M.div
             className="projects-grid"
             initial="hidden"
             animate="visible"
@@ -32,7 +32,7 @@ const Projects = ({ projects }) => (
             }}
           >
             {projects.map((project, idx) => (
-              <motion.div
+              <M.div
                 key={idx}
                 variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
                 className="project-card"
@@ -51,11 +51,11 @@ const Projects = ({ projects }) => (
                   {project.live && <a href={project.live} className="project-link" target="_blank" rel="noopener noreferrer">Live Preview</a>}
                   <a href={project.github} className="project-link" target="_blank" rel="noopener noreferrer">GitHub</a>
                 </nav>
-              </motion.div>
+              </M.div>
             ))}
-          </motion.div>
+          </M.div>
         </div>
-      </motion.section>
+        </M.section>
     </>
   </LazyMotion>
 );

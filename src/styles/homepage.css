@@ -80,7 +80,7 @@
 .projects-card {
   width: 100vw;
   min-height: 100vh;
-  height: 100vh;
+  height: auto;
   margin: 0;
   padding: 3rem 2rem 2rem 2rem;
   background: rgba(31,41,55,0.85);
@@ -89,15 +89,14 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  overflow-y: auto;
+  justify-content: flex-start;
 }
 
 /* Admin Card Styles */
 .admin-card {
   width: 100vw;
   min-height: 100vh;
-  height: 100vh;
+  height: auto;
   margin: 0;
   padding: 3rem 2rem 2rem 2rem;
   background: rgba(31,41,55,0.85);
@@ -106,15 +105,14 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  overflow-y: auto;
+  justify-content: flex-start;
 }
 
 /* About Card Styles */
 .about-card {
   width: 100vw;
   min-height: 100vh;
-  height: 100vh;
+  height: auto;
   margin: 0;
   padding: 3rem 2rem 2rem 2rem;
   background: rgba(31,41,55,0.85);
@@ -123,8 +121,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  overflow-y: auto;
+  justify-content: flex-start;
 }
 
 .projects-title, .admin-title {
@@ -239,7 +236,7 @@
 /* Projects Page Styles */
 .projects-page {
   min-height: 100vh;
-  height: 100vh;
+  height: auto;
   width: 100vw;
   display: flex;
   flex-direction: column;
@@ -261,20 +258,13 @@
 
 /* Homepage Layout */
 .homepage-bg {
-  min-height: 100svh;
   min-height: 100vh;
   width: 100vw;
-  height: 100svh;
-  height: 100vh;
   background: #111;
   color: #fff;
-  position: fixed;
-  top: 0;
-  left: 0;
-        position: relative;
-        overflow-x: hidden;
-        overflow-y: auto;
-  overflow: hidden;
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: auto;
   display: flex;
   flex-direction: column;
   z-index: 0;

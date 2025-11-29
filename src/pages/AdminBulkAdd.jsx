@@ -1,5 +1,5 @@
 import React from 'react';
-import { LazyMotion, domAnimation, m as motion } from 'framer-motion';
+import { m as M } from 'framer-motion';
 
 const AdminBulkAdd = ({
   bulkUrls,
@@ -28,11 +28,11 @@ const AdminBulkAdd = ({
       >{bulkPreviewLoading ? 'Previewing...' : 'Preview Projects'}</button>
       {bulkPreviewError && <div className="project-add-error">{bulkPreviewError}</div>}
       {bulkPreview.length > 0 && (
-        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="mt-4">
+        <M.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="mt-4">
           <h4 className="text-indigo-400 font-bold mb-2">Preview</h4>
           <ul className="space-y-3">
             {bulkPreview.map((p, idx) => (
-              <motion.li
+              <M.li
                 key={p.github || p.url || idx}
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -55,7 +55,7 @@ const AdminBulkAdd = ({
                     </div>
                   </>
                 )}
-              </motion.li>
+              </M.li>
             ))}
           </ul>
           <button
@@ -64,7 +64,7 @@ const AdminBulkAdd = ({
             disabled={bulkLoading}
           >{bulkLoading ? 'Adding...' : 'Add All Valid Projects'}</button>
           {bulkError && <div className="project-add-error mt-2">{bulkError}</div>}
-        </motion.div>
+          </M.div>
       )}
     </div>
   </div>

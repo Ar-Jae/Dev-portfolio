@@ -11,3 +11,9 @@ All notable changes to this project will be documented in this file.
 - Accessibility improvements
 - Project management via GitHub URL
 - Tailwind CSS and framer-motion integration
+
+## [2025-11-28]
+- Mobile-friendly Navbar with hamburger menu and animations
+- Removed rigid 100vh containers to fix mobile scrolling
+- Improved responsive layouts for Projects/Admin/About cards
+- Updated README with mobile responsiveness notes

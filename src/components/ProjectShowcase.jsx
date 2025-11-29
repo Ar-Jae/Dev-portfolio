@@ -1,6 +1,6 @@
 import React from 'react';
 import coverImg from '../assets/cover.jpg';
-import { LazyMotion, domAnimation, m as motionEl } from 'framer-motion';
+import { LazyMotion, domAnimation, m as MotionEl } from 'framer-motion';
 
 const containerVariants = {
   hidden: { opacity: 0, y: 16 },
@@ -19,7 +19,7 @@ const cardVariants = {
 const ProjectShowcase = ({ projects }) => {
   return (
     <LazyMotion features={domAnimation}>
-        <motionEl.section
+        <MotionEl.section
         className="homepage-bg"
         variants={containerVariants}
         initial="hidden"
@@ -29,7 +29,7 @@ const ProjectShowcase = ({ projects }) => {
           <h2 className="projects-title">Projects</h2>
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
             {projects.map((project, idx) => (
-                <motionEl.div
+                <MotionEl.div
                 key={idx}
                 className="rounded-2xl shadow-xl p-6 bg-white/10 dark:bg-gray-900/60 backdrop-blur-lg border border-gray-800 hover:scale-[1.03] hover:shadow-2xl transition-transform duration-300"
                 variants={cardVariants}
@@ -57,11 +57,11 @@ const ProjectShowcase = ({ projects }) => {
                     GitHub
                   </a>
                 </nav>
-                </motionEl.div>
+                </MotionEl.div>
             ))}
           </div>
         </div>
-        </motionEl.section>
+        </MotionEl.section>
     </LazyMotion>
   );
 };

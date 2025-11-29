@@ -1,5 +1,5 @@
 import React from 'react';
-import { LazyMotion, domAnimation, m as motion } from 'framer-motion';
+import { LazyMotion, domAnimation } from 'framer-motion';
 import Navbar from '../components/Navbar';
 
 

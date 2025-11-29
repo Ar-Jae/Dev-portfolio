@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { LazyMotion, domAnimation, m as motion } from 'framer-motion';
+import { LazyMotion, domAnimation, m as M } from 'framer-motion';
 import Navbar from '../components/Navbar';
 
 
@@ -42,7 +42,7 @@ const Contact = () => {
       setStatus({ submitting: false, submitted: true, error: '' });
       setForm({ name: '', email: '', message: '' });
       setTimeout(() => setStatus(prev => ({ ...prev, submitted: false })), 4000);
-    } catch (err) {
+    } catch {
       // On error
       setStatus({
         submitting: false,
@@ -56,17 +56,17 @@ const Contact = () => {
     <LazyMotion features={domAnimation}>
       <>
       <Navbar />
-      <motion.main
+      <M.main
         className="homepage-bg contact-page"
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
       >
-        <motion.h1 className="contact-title" initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>Contact</motion.h1>
-        <motion.p className="contact-desc" initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.1 }}>
+        <M.h1 className="contact-title" initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>Contact</M.h1>
+        <M.p className="contact-desc" initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.1 }}>
           Feel free to reach out via the form or social links below.
-        </motion.p>
-        <motion.form
+        </M.p>
+        <M.form
           className="contact-form"
           onSubmit={handleSubmit}
           initial={{ opacity: 0, y: 20 }}
@@ -102,7 +102,7 @@ const Contact = () => {
             required
             className="contact-input min-h-[120px]"
           />
-          <motion.button
+          <M.button
             type="submit"
             className="contact-btn"
             whileTap={{ scale: 0.97 }}
@@ -110,21 +110,21 @@ const Contact = () => {
             disabled={status.submitting}
           >
             {status.submitting ? 'Sending...' : 'Send Message'}
-          </motion.button>
-          {status.error && <motion.div className="contact-error" initial={{ opacity: 0 }} animate={{ opacity: 1 }}>{status.error}</motion.div>}
-          {status.submitted && <motion.div className="contact-success" initial={{ opacity: 0 }} animate={{ opacity: 1 }}>Thank you! I'll get back to you soon.</motion.div>}
-        </motion.form>
-        <motion.div
+          </M.button>
+          {status.error && <M.div className="contact-error" initial={{ opacity: 0 }} animate={{ opacity: 1 }}>{status.error}</M.div>}
+          {status.submitted && <M.div className="contact-success" initial={{ opacity: 0 }} animate={{ opacity: 1 }}>Thank you! I'll get back to you soon.</M.div>}
+        </M.form>
+        <M.div
           className="contact-socials"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.3 }}
         >
-          <motion.a href="mailto:rhojon.se@gmail.com" className="contact-link" aria-label="Email" whileHover={{ scale: 1.08 }} whileTap={{ scale: 0.97 }}><span aria-hidden="true">✉️</span> Email</motion.a>
-          <motion.a href="https://github.com/ArJae" className="contact-link" aria-label="GitHub" whileHover={{ scale: 1.08 }} whileTap={{ scale: 0.97 }}><span aria-hidden="true">🐙</span> GitHub</motion.a>
-          <motion.a href="https://www.linkedin.com/in/ar-jae-wiz/" className="contact-link" aria-label="LinkedIn" whileHover={{ scale: 1.08 }} whileTap={{ scale: 0.97 }}><span aria-hidden="true">💼</span> LinkedIn</motion.a>
-        </motion.div>
-      </motion.main>
+          <M.a href="mailto:rhojon.se@gmail.com" className="contact-link" aria-label="Email" whileHover={{ scale: 1.08 }} whileTap={{ scale: 0.97 }}><span aria-hidden="true">✉️</span> Email</M.a>
+          <M.a href="https://github.com/ArJae" className="contact-link" aria-label="GitHub" whileHover={{ scale: 1.08 }} whileTap={{ scale: 0.97 }}><span aria-hidden="true">🐙</span> GitHub</M.a>
+          <M.a href="https://www.linkedin.com/in/ar-jae-wiz/" className="contact-link" aria-label="LinkedIn" whileHover={{ scale: 1.08 }} whileTap={{ scale: 0.97 }}><span aria-hidden="true">💼</span> LinkedIn</M.a>
+        </M.div>
+      </M.main>
       </>
     </LazyMotion>
   );
