@@ -32,6 +32,14 @@ export const projects = [
     github: "https://github.com/arjaedev/Jeopardy-Part-I",
     demo: "https://arjaedev.github.io/Jeopardy-Part-I/"
   },
+
+  {
+    title: "react chat bit by bit",
+    description: "Cyberpunk Chat App - A modern, real-time chat application interface featuring a high-contrast Cyberpunk / Sci-Fi theme. Built with React and Vite, this project demonstrates advanced CSS styling, component-based architecture, and a responsive UI.",
+    stack: ["JavaScript","React","Vite","CSS"],
+    github: "https://github.com/arjaedev/react-chat-bit-by-bit",
+    demo: "https://arjaedev.github.io/react-chat-bit-by-bit/"
+  },
   
 ];
 
