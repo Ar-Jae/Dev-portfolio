@@ -23,14 +23,16 @@ export const projects = [
     description: "The Friendly Fence Bulletin Board is a community-focused web application designed to connect neighbors by sharing local news, events, and updates. It serves as a digital town square where users can easily browse upcoming activities, post their own events, and RSVP to gatherings without needing to create an account",
     stack: ["JavaScript ", "React", "CSS", "Vite"],
     github: "https://github.com/Ar-Jae/Local-Event-Bulletin-Board-Frontend",
-    demo: "https://ar-jae.github.io/Local-Event-Bulletin-Board-Frontend/"
+    demo: "https://ar-jae.github.io/Local-Event-Bulletin-Board-Frontend/",
+    image: "https://images.unsplash.com/photo-1531403009284-440f080d1e12?q=80&w=2070&auto=format&fit=crop"
   },
   {
     title: "Jeopardy Part I",
     description: "Jeopardy Game - A browser-based interactive quiz game inspired by the classic TV show. Features include a fully functional two-player mode with automatic score tracking, turn management, two rounds of questions with increasing difficulty, and a Final Jeopardy wagering round. Built with vanilla JavaScript, HTML, and CSS, and deployed using Vite.",
     stack: ["JavaScript", "HTML", "CSS", "Vite"],
     github: "https://github.com/arjaedev/Jeopardy-Part-I",
-    demo: "https://arjaedev.github.io/Jeopardy-Part-I/"
+    demo: "https://arjaedev.github.io/Jeopardy-Part-I/",
+    image: "https://images.unsplash.com/photo-1606326608606-aa0b62935f2b?q=80&w=2070&auto=format&fit=crop"
   },
 
   {
@@ -38,7 +40,8 @@ export const projects = [
     description: "Cyberpunk Chat App - A modern, real-time chat application interface featuring a high-contrast Cyberpunk / Sci-Fi theme. Built with React and Vite, this project demonstrates advanced CSS styling, component-based architecture, and a responsive UI.",
     stack: ["JavaScript","React","Vite","CSS"],
     github: "https://github.com/arjaedev/react-chat-bit-by-bit",
-    demo: "https://arjaedev.github.io/react-chat-bit-by-bit/"
+    demo: "https://arjaedev.github.io/react-chat-bit-by-bit/",
+    image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=2070&auto=format&fit=crop"
   },
   
 ];

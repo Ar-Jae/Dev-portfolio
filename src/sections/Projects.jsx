@@ -39,8 +39,18 @@ const Projects = () => {
             onClick={e => e.stopPropagation()}
           >
             <div className="relative">
-              <div className="h-64 bg-slate-800 flex items-center justify-center text-slate-500">
-                <span className="font-medium text-lg">Project Preview</span>
+              <div className="h-64 bg-slate-800 overflow-hidden">
+                {selectedProject.image ? (
+                  <img 
+                    src={selectedProject.image} 
+                    alt={selectedProject.title} 
+                    className="w-full h-full object-cover"
+                  />
+                ) : (
+                  <div className="w-full h-full flex items-center justify-center text-slate-500">
+                    <span className="font-medium text-lg">Project Preview</span>
+                  </div>
+                )}
               </div>
               <button 
                 onClick={() => setSelectedProject(null)}

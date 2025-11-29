@@ -7,9 +7,20 @@ const ProjectCard = ({ project, onClick }) => {
       onClick={onClick}
       className="group bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 cursor-pointer"
     >
-      {/* Project Image Placeholder */}
-      <div className="h-48 bg-slate-800 flex items-center justify-center text-slate-500 group-hover:bg-indigo-900/20 transition-colors">
-        <span className="font-medium">Project Preview</span>
+      {/* Project Image */}
+      <div className="h-48 bg-slate-800 overflow-hidden relative">
+        {project.image ? (
+          <img 
+            src={project.image} 
+            alt={project.title} 
+            className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
+          />
+        ) : (
+          <div className="w-full h-full flex items-center justify-center text-slate-500">
+            <span className="font-medium">Project Preview</span>
+          </div>
+        )}
+        <div className="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors duration-300" />
       </div>
       
       <div className="p-6">
