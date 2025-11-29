@@ -1,7 +1,5 @@
 import React from 'react';
 import { MapPin, Calendar, Briefcase, Code } from 'lucide-react';
-import meVideo from '../assets/me.MP4';
-
 
 const About = () => {
   return (
@@ -13,7 +11,7 @@ const About = () => {
             <div className="absolute -inset-4 bg-indigo-100 rounded-2xl transform -rotate-2 group-hover:rotate-0 transition-transform duration-300"></div>
             <div className="relative bg-slate-200 rounded-xl overflow-hidden aspect-square flex items-center justify-center text-slate-400">
               <video 
-                src={meVideo} 
+                src="https://www.dropbox.com/scl/fi/kgv30ku9twlw9i3of8f9v/42FBAAB2-B6F2-43CD-961E-0F9C827328B0.MP4?rlkey=moh3r32mcrptz1jl65jvvympq&st=e6jqvyq8&dl=1" 
                 autoPlay 
                 loop 
                 muted 
