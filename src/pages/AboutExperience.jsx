@@ -1,5 +1,5 @@
 import React from 'react';
-// Removed unused motion import
+import { LazyMotion, domAnimation, m as M } from 'framer-motion';
 
 const aboutData = {
   name: 'Ar’Jae',
@@ -25,7 +25,7 @@ const aboutData = {
 };
 
 const AboutExperience = () => (
-  <motion.section
+  <M.section
     initial={{ opacity: 0, y: 40 }}
     animate={{ opacity: 1, y: 0 }}
     transition={{ duration: 0.6 }}
@@ -37,7 +37,7 @@ const AboutExperience = () => (
     <h3 className="text-lg font-semibold text-indigo-500 mb-2">Experience</h3>
     <ul className="space-y-4">
       {aboutData.experience.map((exp, idx) => (
-        <motion.li
+        <M.li
           key={idx}
           initial={{ opacity: 0, x: -30 }}
           animate={{ opacity: 1, x: 0 }}
@@ -47,10 +47,10 @@ const AboutExperience = () => (
           <div className="font-bold text-indigo-700 dark:text-indigo-300">{exp.role}</div>
           <div className="text-gray-700 dark:text-gray-300">{exp.company} &mdash; {exp.period}</div>
           <div className="text-gray-600 dark:text-gray-400 mt-1">{exp.details}</div>
-        </motion.li>
+        </M.li>
       ))}
     </ul>
-  </motion.section>
+  </M.section>
 );
 
 export default AboutExperience;

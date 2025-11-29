@@ -1,5 +1,5 @@
 import React from 'react';
-import { LazyMotion, domAnimation } from 'framer-motion';
+import { LazyMotion, domAnimation, m as M } from 'framer-motion';
 import Navbar from '../components/Navbar';
 
 const experiences = [
@@ -26,7 +26,7 @@ const Experience = () => (
   <LazyMotion features={domAnimation}>
     <>
     <Navbar />
-    <motion.section
+    <M.section
       className="homepage-bg"
       style={{ minHeight: '100vh', height: '100vh', width: '100vw', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: 0 }}
       initial={{ opacity: 0, y: 30 }}
@@ -34,15 +34,15 @@ const Experience = () => (
       transition={{ duration: 0.6 }}
     >
       <div className="about-card" style={{ width: '100vw', minHeight: '100vh', height: '100vh', margin: 0, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: '3rem 2rem 2rem 2rem' }}>
-        <motion.h2
+        <M.h2
           className="projects-title"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
           Experience
-        </motion.h2>
-        <motion.ul
+        </M.h2>
+        <M.ul
           className="experience-list"
           initial="hidden"
           animate="visible"
@@ -53,7 +53,7 @@ const Experience = () => (
           style={{ width: '100%', maxWidth: '600px', margin: '2rem auto', padding: 0, listStyle: 'none' }}
         >
           {experiences.map((exp, i) => (
-            <motion.li
+            <M.li
               key={i}
               variants={{ hidden: { opacity: 0, y: 10 }, visible: { opacity: 1, y: 0 } }}
               className="experience-item"
@@ -64,11 +64,11 @@ const Experience = () => (
                 <h3 className="experience-title" style={{ fontWeight: 600, color: '#a78bfa', marginBottom: '0.3rem' }}>{exp.year} - {exp.role}</h3>
                 <p className="experience-desc" style={{ color: '#e5e7eb', fontSize: '1.05rem' }}>{exp.desc}</p>
               </div>
-            </motion.li>
+            </M.li>
           ))}
-        </motion.ul>
+        </M.ul>
       </div>
-    </motion.section>
+    </M.section>
     </>
   </LazyMotion>
 );
