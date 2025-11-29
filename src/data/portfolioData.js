@@ -32,6 +32,7 @@ export const projects = [
     github: "https://github.com/arjaedev/Jeopardy-Part-I",
     demo: "https://arjaedev.github.io/Jeopardy-Part-I/"
   },
+  
 ];
 
 export const experiences = [

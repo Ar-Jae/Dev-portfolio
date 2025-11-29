@@ -1,18 +1,31 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { ArrowRight, Download } from 'lucide-react';
 import Button from '../components/Button';
 
 const Hero = () => {
+  const videoRef = useRef(null);
+
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.play().catch(error => {
+        console.log("Video autoplay failed:", error);
+      });
+    }
+  }, []);
+
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
       {/* Video Background */}
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-black/60 z-10"></div> {/* Overlay for readability */}
         <video 
+          ref={videoRef}
           autoPlay 
           loop 
           muted 
           playsInline 
+          preload="auto"
+          poster="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop"
           className="w-full h-full object-cover"
         >
           <source src="https://cdn.pixabay.com/video/2019/10/10/27725-365890983.mp4" type="video/mp4" />
