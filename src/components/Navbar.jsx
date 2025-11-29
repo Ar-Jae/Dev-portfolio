@@ -25,12 +25,12 @@ const Navbar = () => {
   return (
     <nav 
       className={`fixed w-full z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-white/90 backdrop-blur-md shadow-sm py-4' : 'bg-transparent py-6'
+        isScrolled ? 'bg-slate-950/90 backdrop-blur-md shadow-sm py-4 border-b border-slate-800' : 'bg-transparent py-6'
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
         <a href="#home" className="text-2xl font-bold text-primary">
-          Rhojon Wizzard<span className="text-dark"></span>
+          Rhojon Wizzard<span className="text-white"></span>
         </a>
 
         {/* Desktop Menu */}
@@ -39,7 +39,7 @@ const Navbar = () => {
             <a
               key={link.name}
               href={link.href}
-              className="text-slate-600 hover:text-primary font-medium transition-colors"
+              className={`font-medium transition-colors ${isScrolled ? 'text-slate-300 hover:text-primary' : 'text-slate-200 hover:text-white'}`}
             >
               {link.name}
             </a>
@@ -48,7 +48,7 @@ const Navbar = () => {
 
         {/* Mobile Menu Button */}
         <button 
-          className="md:hidden text-slate-600"
+          className={`md:hidden ${isScrolled ? 'text-slate-300' : 'text-white'}`}
           onClick={() => setIsOpen(!isOpen)}
         >
           {isOpen ? <X size={28} /> : <Menu size={28} />}
@@ -57,12 +57,12 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden absolute top-full left-0 w-full bg-white shadow-lg py-4 px-6 flex flex-col space-y-4">
+        <div className="md:hidden absolute top-full left-0 w-full bg-slate-900 border-b border-slate-800 shadow-lg py-4 px-6 flex flex-col space-y-4">
           {navLinks.map((link) => (
             <a
               key={link.name}
               href={link.href}
-              className="text-slate-600 hover:text-primary font-medium"
+              className="text-slate-300 hover:text-primary font-medium"
               onClick={() => setIsOpen(false)}
             >
               {link.name}

@@ -9,7 +9,7 @@ import Contact from '../sections/Contact';
 
 const Home = () => {
   return (
-    <div className="min-h-screen bg-slate-50">
+    <div className="min-h-screen bg-slate-950">
       <Navbar />
       <main>
         <Hero />
@@ -20,7 +20,7 @@ const Home = () => {
         <Contact />
       </main>
       
-      <footer className="bg-white py-8 border-t border-slate-100">
+      <footer className="bg-slate-950 py-8 border-t border-slate-800">
         <div className="max-w-6xl mx-auto px-6 text-center text-slate-500 text-sm">
           <p>&copy; {new Date().getFullYear()} Ar'Jae. All rights reserved.</p>
         </div>
