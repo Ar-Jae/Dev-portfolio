@@ -1,7 +1,7 @@
 export const skillCategories = [
   {
     title: "Languages",
-    skills: ["JavaScript (ES6+)", "TypeScript", "Python", "HTML5", "CSS3", "SQL"]
+    skills: ["JavaScript (ES6+)", "HTML5", "CSS3", "SQL"]
   },
   {
     title: "Frontend",
@@ -13,7 +13,7 @@ export const skillCategories = [
   },
   {
     title: "Tools & DevOps",
-    skills: ["Git", "Docker", "AWS", "CI/CD", "Jest", "Figma"]
+    skills: ["Git", "Docker", "CI/CD"]
   }
 ];
 

@@ -30,7 +30,7 @@ const Navbar = () => {
     >
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
         <a href="#home" className="text-2xl font-bold text-primary">
-          Portfolio<span className="text-dark">.</span>
+          Rhojon Wizzard<span className="text-dark"></span>
         </a>
 
         {/* Desktop Menu */}
