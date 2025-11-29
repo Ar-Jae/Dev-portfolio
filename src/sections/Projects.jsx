@@ -39,8 +39,15 @@ const Projects = () => {
             onClick={e => e.stopPropagation()}
           >
             <div className="relative">
-              <div className="h-64 bg-slate-800 overflow-hidden">
-                {selectedProject.image ? (
+              <div className="h-96 bg-slate-800 overflow-hidden">
+                {selectedProject.demo ? (
+                  <iframe 
+                    src={selectedProject.demo} 
+                    title={selectedProject.title}
+                    className="w-full h-full border-0 bg-white"
+                    loading="lazy"
+                  />
+                ) : selectedProject.image ? (
                   <img 
                     src={selectedProject.image} 
                     alt={selectedProject.title} 
