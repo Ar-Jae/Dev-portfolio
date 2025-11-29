@@ -50,33 +50,50 @@ export const projects = [
 
 export const experiences = [
   {
-    title: "Senior Frontend Engineer",
-    company: "Tech Solutions Inc.",
-    period: "2022 - Present",
+    title: "Freelance Web Developer",
+    company: "Remote",
+    period: "Jul 2025 - Present",
     description: [
-      "Led the migration of a legacy monolith to a micro-frontend architecture using React and Webpack.",
-      "Improved site performance by 40% through code splitting and lazy loading strategies.",
-      "Mentored junior developers and established coding standards for the team."
+      "Developing custom web applications and responsive websites for diverse clients using modern technologies.",
+      "Collaborating with clients to define requirements, design user interfaces, and deliver high-quality solutions.",
+      "Managing full project lifecycles from concept to deployment and maintenance."
     ]
   },
   {
-    title: "Software Developer",
-    company: "Digital Innovations",
-    period: "2020 - 2022",
+    title: "Human Resources Specialist, U.S. Army – Sergeant (E-5)",
+    company: "Westover Air Base",
+    period: "Mar 2019 - Mar 2025",
     description: [
-      "Developed and maintained multiple client websites using React and Node.js.",
-      "Collaborated with designers to implement pixel-perfect responsive UIs.",
-      "Integrated third-party APIs for payment processing and data visualization."
+      "Served as the senior HR advisor to executive leadership, managing personnel strategy, workforce planning, and employee readiness across the organization.",
+      "Developed and implemented HR policies and systems that ensured data security, compliance, and operational efficiency.",
+      "Streamlined documentation and administrative workflows, improving processing speed and compliance accuracy by over 100%.",
+      "Analyzed workforce and performance data to guide staffing decisions and optimize resource allocation, enhancing overall organizational readiness.",
+      "Led cross-functional teams under high-pressure conditions, demonstrating strong leadership, adaptability, and sound decision-making.",
+      "Trained and mentored junior staff in HR procedures and compliance standards, building a culture of accountability and reducing administrative errors.",
+      "Implemented strategic HR initiatives that improved employee support and engagement across multiple departments.",
+      "Collaborated with operations and leadership teams to align HR practices with organizational goals, improving communication and efficiency.",
+      "Maintained confidential employee records and ensured full compliance with federal and organizational regulations."
+    ]
+  }
+];
+
+export const education = [
+  {
+    degree: "Full‑Stack Web Development",
+    institution: "Springfield Technical Community College, Remote",
+    period: "Feb 2025 - Jul 2025",
+    description: [
+      "Completed a 24-week intensive program focused on full-stack development using the MERN stack (MongoDB, Express, React, Node.js).",
+      "Built and deployed multiple responsive web applications emphasizing JavaScript, RESTful APIs, testing pipelines, and version control using Git."
     ]
   },
   {
-    title: "Junior Web Developer",
-    company: "Creative Agency",
-    period: "2019 - 2020",
+    degree: "Bachelor of Science in Computer Information Systems",
+    institution: "Post University, Waterbury, CT (Remote)",
+    period: "Sep 2025 - Present",
     description: [
-      "Assisted in the development of WordPress themes and plugins.",
-      "Optimized images and assets for faster page load times.",
-      "Participated in daily stand-ups and agile development processes."
+      "Coursework includes database systems, cybersecurity fundamentals, software development, and systems analysis.",
+      "Developing proficiency in project management, data-driven decision-making, and IT infrastructure planning."
     ]
   }
 ];
