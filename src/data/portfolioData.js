@@ -17,35 +17,14 @@ export const skillCategories = [
   }
 ];
 
-export const projects = [
+export const projects = [  
   {
-    title: "E-Commerce Dashboard",
-    description: "A comprehensive dashboard for managing products, orders, and analytics. Features real-time data visualization and dark mode.",
-    stack: ["React", "Tailwind", "Chart.js", "Firebase"],
-    github: "#",
-    demo: "#"
+    title: "Local Event Bulletin Board Frontend",
+    description: "The Friendly Fence Bulletin Board is a community-focused web application designed to connect neighbors by sharing local news, events, and updates. It serves as a digital town square where users can easily browse upcoming activities, post their own events, and RSVP to gatherings without needing to create an account",
+    stack: ["JavaScript"],
+    github: "https://github.com/Ar-Jae/Local-Event-Bulletin-Board-Frontend",
+    demo: "https://local-event-bulletin-board-frontend.vercel.app"
   },
-  {
-    title: "Task Management App",
-    description: "A collaborative task manager with drag-and-drop functionality, team workspaces, and progress tracking.",
-    stack: ["TypeScript", "React", "Node.js", "MongoDB"],
-    github: "#",
-    demo: "#"
-  },
-  {
-    title: "AI Content Generator",
-    description: "SaaS application that uses OpenAI API to generate marketing copy and social media posts.",
-    stack: ["Next.js", "OpenAI API", "Stripe", "PostgreSQL"],
-    github: "#",
-    demo: "#"
-  },
-  {
-    title: "Weather Forecast App",
-    description: "Beautiful weather application providing detailed forecasts, maps, and severe weather alerts.",
-    stack: ["React", "OpenWeatherMap", "Leaflet", "CSS Modules"],
-    github: "#",
-    demo: "#"
-  }
 ];
 
 export const experiences = [

@@ -1,9 +1,12 @@
 import React from 'react';
 import { Github, ExternalLink } from 'lucide-react';
 
-const ProjectCard = ({ project }) => {
+const ProjectCard = ({ project, onClick }) => {
   return (
-    <div className="group bg-white border border-slate-100 rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+    <div 
+      onClick={onClick}
+      className="group bg-white border border-slate-100 rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 cursor-pointer"
+    >
       {/* Project Image Placeholder */}
       <div className="h-48 bg-slate-100 flex items-center justify-center text-slate-400 group-hover:bg-indigo-50 transition-colors">
         <span className="font-medium">Project Preview</span>
@@ -28,6 +31,9 @@ const ProjectCard = ({ project }) => {
         <div className="flex items-center gap-4">
           <a 
             href={project.github} 
+            onClick={(e) => e.stopPropagation()}
+            target="_blank"
+            rel="noopener noreferrer"
             className="flex items-center gap-2 text-sm font-medium text-slate-600 hover:text-primary transition-colors"
           >
             <Github size={18} />
@@ -35,6 +41,9 @@ const ProjectCard = ({ project }) => {
           </a>
           <a 
             href={project.demo} 
+            onClick={(e) => e.stopPropagation()}
+            target="_blank"
+            rel="noopener noreferrer"
             className="flex items-center gap-2 text-sm font-medium text-slate-600 hover:text-primary transition-colors"
           >
             <ExternalLink size={18} />

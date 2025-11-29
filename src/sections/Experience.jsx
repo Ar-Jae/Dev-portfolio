@@ -1,7 +1,45 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { experiences, education } from '../data/portfolioData';
+import { X } from 'lucide-react';
 
 const Experience = () => {
+  const [selectedItem, setSelectedItem] = useState(null);
+
+  const renderCardContent = (item, type) => {
+    const isLong = item.description.length > 3;
+    const displayItems = isLong ? item.description.slice(0, 3) : item.description;
+
+    return (
+      <div 
+        className={`bg-white p-6 rounded-xl shadow-sm border border-slate-100 transition-all ${
+          isLong ? 'hover:shadow-md cursor-pointer hover:-translate-y-1' : ''
+        }`}
+        onClick={() => isLong && setSelectedItem({ ...item, type })}
+      >
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-4 gap-2">
+          <h3 className="text-lg font-bold text-dark">{item.title || item.degree}</h3>
+          <span className="text-sm font-medium text-primary bg-indigo-50 px-3 py-1 rounded-full w-fit">
+            {item.period}
+          </span>
+        </div>
+        <p className="text-slate-600 font-medium mb-4">{item.company || item.institution}</p>
+        <ul className="space-y-2">
+          {displayItems.map((desc, idx) => (
+            <li key={idx} className="text-slate-600 text-sm leading-relaxed flex items-start gap-2">
+              <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-slate-400 flex-shrink-0"></span>
+              {desc}
+            </li>
+          ))}
+        </ul>
+        {isLong && (
+          <p className="text-primary text-sm font-medium mt-4 pt-2 border-t border-slate-100">
+            Click to view full details ({item.description.length - 3} more items)...
+          </p>
+        )}
+      </div>
+    );
+  };
+
   return (
     <section id="experience" className="section-padding bg-slate-50">
       <div className="max-w-4xl mx-auto">
@@ -22,23 +60,7 @@ const Experience = () => {
 
                 {/* Content */}
                 <div className="md:w-[45%] mb-8 md:mb-0">
-                  <div className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow border border-slate-100">
-                    <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-4 gap-2">
-                      <h3 className="text-lg font-bold text-dark">{exp.title}</h3>
-                      <span className="text-sm font-medium text-primary bg-indigo-50 px-3 py-1 rounded-full w-fit">
-                        {exp.period}
-                      </span>
-                    </div>
-                    <p className="text-slate-600 font-medium mb-4">{exp.company}</p>
-                    <ul className="space-y-2">
-                      {exp.description.map((item, idx) => (
-                        <li key={idx} className="text-slate-600 text-sm leading-relaxed flex items-start gap-2">
-                          <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-slate-400 flex-shrink-0"></span>
-                          {item}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
+                  {renderCardContent(exp, 'experience')}
                 </div>
                 
                 {/* Empty space for the other side */}
@@ -65,23 +87,7 @@ const Experience = () => {
 
                 {/* Content */}
                 <div className="md:w-[45%] mb-8 md:mb-0">
-                  <div className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow border border-slate-100">
-                    <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-4 gap-2">
-                      <h3 className="text-lg font-bold text-dark">{edu.degree}</h3>
-                      <span className="text-sm font-medium text-primary bg-indigo-50 px-3 py-1 rounded-full w-fit">
-                        {edu.period}
-                      </span>
-                    </div>
-                    <p className="text-slate-600 font-medium mb-4">{edu.institution}</p>
-                    <ul className="space-y-2">
-                      {edu.description.map((item, idx) => (
-                        <li key={idx} className="text-slate-600 text-sm leading-relaxed flex items-start gap-2">
-                          <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-slate-400 flex-shrink-0"></span>
-                          {item}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
+                  {renderCardContent(edu, 'education')}
                 </div>
                 
                 {/* Empty space for the other side */}
@@ -91,6 +97,49 @@ const Experience = () => {
           ))}
         </div>
       </div>
+
+      {/* Detail Modal */}
+      {selectedItem && (
+        <div 
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm"
+          onClick={() => setSelectedItem(null)}
+        >
+          <div 
+            className="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl animate-in fade-in zoom-in duration-200"
+            onClick={e => e.stopPropagation()}
+          >
+            <div className="p-6 border-b border-slate-100 flex justify-between items-center sticky top-0 bg-white z-10">
+              <div>
+                <h3 className="text-xl font-bold text-dark">{selectedItem.title || selectedItem.degree}</h3>
+                <p className="text-slate-600 font-medium">{selectedItem.company || selectedItem.institution}</p>
+              </div>
+              <button 
+                onClick={() => setSelectedItem(null)}
+                className="p-2 hover:bg-slate-100 rounded-full transition-colors text-slate-500 hover:text-red-500"
+              >
+                <X size={24} />
+              </button>
+            </div>
+            
+            <div className="p-6">
+              <div className="mb-6">
+                <span className="text-sm font-medium text-primary bg-indigo-50 px-3 py-1 rounded-full">
+                  {selectedItem.period}
+                </span>
+              </div>
+              
+              <ul className="space-y-3">
+                {selectedItem.description.map((item, idx) => (
+                  <li key={idx} className="text-slate-600 leading-relaxed flex items-start gap-3">
+                    <span className="mt-2 w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0"></span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 };
